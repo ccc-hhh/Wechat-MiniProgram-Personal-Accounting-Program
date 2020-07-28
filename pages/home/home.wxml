@@ -1,0 +1,121 @@
+<!--pages/home/home.wxml-->
+<!--顶部状态栏-->
+<view class="page">
+	<view class="page__bd" style="height: 100%;">
+		<view class="weui-tab">
+			<view class="weui-navbar">
+				<view class="weui-navbar__item" style="height:20px;">
+					<picker mode="date" value="{{date}}" fields="month" start="2019-09" end="2021-01" bindchange="bindDateChange">{{date}}</picker>
+				</view>
+				<view class="weui-navbar__item" style="height:20px;" bindtap="openChooseClass">{{classify}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--账单list-->
+<view class="page">
+	<view class="page__bd">
+		<view class="weui-cells__title">  收入：{{income}}<text style="float:right;">支出：{{spending}}</text></view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_example"  wx:for="{{accounts}}" wx:key="accounts">
+				<view class="weui-cell__hd">
+					<view class="{{iconClass[item['class']]}}" style="margin-right:10px;vertical-align:middle;font-size:30px;" />
+				</view>
+				<view class="weui-cell__bd">{{item['note']}}<text style="font-size:15px;color:#8E8E8E">\n{{item['date']}}</text></view>
+				<view class="weui-cell__ft">{{item['money']}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--分类选择器-->
+<view class="page">
+	<view wx:if="{{dialog}}" class="weui-skin_android fadeIn" bindtap="closeChooseClass">
+		<view class="weui-mask"></view>
+		<view class="weui-actionsheet">
+			<view class="weui-actionsheet__menu">
+				<view class="weui-grids">
+					<a class="weui-grid" bindtap="chooseClass" data-text="娱乐">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-yule" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">娱乐</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="交通">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-jiaotong" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">交通</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="食品">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-lingshi" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">食品</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="学习">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-xuexi" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">学习</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="医疗">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-yiliao" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">医疗</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="运动">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-yundong" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">运动</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="服饰">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-fushi" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">服饰</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="社交">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-shejiao" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">社交</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="数码">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-shuma" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">数码</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="美容">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-meirong" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">美容</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="工资">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-gongzi" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">工资</view>
+					</a>
+					<a class="weui-grid" bindtap="chooseClass" data-text="理财">
+						<view class="weui-grid__icon">
+							<view class="iconfont icon-licaishouyi" style="font-size:25px;"></view>
+						</view>
+						<view class="weui-grid__label">理财</view>
+					</a>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--悬浮按钮-->
+<view>
+	<button class="img-plus zindex" bindtap="gotoWrite"></button>
+	<image src="../../image/write.png" class="img-plus"></image>
+</view>

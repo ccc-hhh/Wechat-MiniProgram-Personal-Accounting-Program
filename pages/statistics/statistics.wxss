@@ -1,0 +1,37 @@
+/* pages/statistics/statistics.wxss */
+@import '../../style/weui.wxss';
+@import '../../style/iconfont.wxss';
+
+
+ec-canvas {
+	width: 410px;
+	height: 300px;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	padding: 5px;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+	border-bottom-left-radius: 10rpx;
+	border-bottom-right-radius: 10rpx;
+	box-shadow: 0 8rpx 8rpx rgba(88, 88, 88, 0.233);
+}
+
+.page {
+	background-color: var(--weui-BG-2);
+}
+
+.page__bd {
+	height: 100%;
+}
+
+.page__bd {
+	padding-bottom: 0
+}
+
+.weui-tab__content {
+	padding-top: 60px;
+	text-align: center
+}

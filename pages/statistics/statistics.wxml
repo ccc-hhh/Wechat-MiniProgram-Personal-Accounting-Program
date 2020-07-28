@@ -1,0 +1,41 @@
+<!--pages/statistics/statistics.wxml-->
+<view class="page">
+	<view class="page__bd" style="height: 100%;">
+		<view class="weui-tab">
+			<view class="weui-navbar">
+				<view wx:if="{{income_or_spending=='income'}}" class="{{weui_navbar['on']}}" style="height:20px;" bindtap="openIncome">收入:￥{{income}}</view>
+				<view wx:else class="{{weui_navbar['off']}}" style="height:20px;" bindtap="openIncome">收入:￥{{income}}</view>
+				<view class="weui-navbar__item" style="height:20px;">
+					<picker mode="date" value="{{date}}" fields="month" start="2019-09" end="2021-01" bindchange="bindDateChange">{{date}}</picker>
+				</view>
+				<view wx:if="{{income_or_spending=='spending'}}" class="{{weui_navbar['on']}}" style="height:20px;" bindtap="openSpending">支出:￥{{spending}}</view>
+				<view wx:else class="{{weui_navbar['off']}}" style="height:20px;" bindtap="openSpending">支出:￥{{spending}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!--图表-->
+<view class="container">
+	<ec-canvas id="mychart1" canvas-id="mychart1" ec="{{ec}}" style="border: 5rpx solid #d0d0d0;"></ec-canvas>
+</view>
+<view class="container">
+	<ec-canvas id="mychart2" canvas-id="mychart2" ec="{{ec2}}" style="border: 5rpx solid #d0d0d0;"></ec-canvas>
+</view>
+
+<!--榜单-->
+<view class="page">
+	<view class="page__bd">
+		<view wx:if="{{income_or_spending=='spending'}}" class="weui-cells__title" style="text-align:center;font-size:20px;color:black;">支出榜</view>
+		<view wx:else class="weui-cells__title" style="text-align:center;font-size:20px;color:black;">收入榜</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_example"  wx:for="{{ranking}}" wx:key="ranking" wx:if="{{index<5}}">>
+				<view class="weui-cell__hd">
+					<view class="{{iconClass[item['class']]}}" style="margin-right:10px;vertical-align:middle;font-size:30px;" />
+				</view>
+				<view class="weui-cell__bd">{{item['note']}}<text style="font-size:15px;color:#8E8E8E">\n{{item['date']}}</text></view>
+				<view class="weui-cell__ft">{{item['money']}}</view>
+			</view>
+		</view>
+	</view>
+</view>

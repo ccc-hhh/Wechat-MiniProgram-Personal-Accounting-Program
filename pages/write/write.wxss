@@ -1,0 +1,33 @@
+/* pages/write/write.wxss */
+@import '../../style/weui.wxss';
+
+.logo {
+	display: block;
+	position: absolute;
+	top: 100rpx;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 500rpx;
+	height: 100rpx;
+}
+
+.container {
+	display: flex;
+	width: 100%;
+	padding: 5px;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+
+.page {
+	height: 100%;
+	padding-top: 6em;
+}
+
+.weui-label {
+	width: 3.1em
+}
+
+.placeholder_center {
+	text-align: center;
+}
