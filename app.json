@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/home/home",
+    "pages/statistics/statistics",
+    "pages/write/write",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar":{
+    "color":"#3C3C3C",
+    "selectedColor":"#00a8f3",
+    "borderStyle":"black",
+    "backgroundColor":"#FCFCFC",
+    "list":[
+    {
+      "pagePath":"pages/write/write",
+      "text":"记录",
+      "iconPath":"image/write.png",
+      "selectedIconPath":"image/write_selected.png"
+    },
+    {
+    "pagePath":"pages/home/home",
+    "text":"账单",
+    "iconPath":"image/accounts.png",
+    "selectedIconPath":"image/accounts_selected.png"
+    },
+    {
+    "pagePath":"pages/statistics/statistics",
+    "text":"统计",
+    "iconPath":"image/statistics.png",
+    "selectedIconPath":"image/statistics_selected.png"  
+    }
+    ]}
+}
