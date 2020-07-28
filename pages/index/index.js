@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 const db = wx.cloud.database({
-  env: 'ccc-hhh-zmio9'
+  env: 'xxx-xxx-xxx'
 });
 const _ = db.command
 
