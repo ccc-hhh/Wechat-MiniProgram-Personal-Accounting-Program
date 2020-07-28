@@ -3,7 +3,7 @@ import * as echarts from '../../ec-canvas/echarts';
 
 const app = getApp()
 const db = wx.cloud.database({
-	env: 'ccc-hhh-zmio9'
+	env: 'xxx-xxx-xxx'
 });
 const _ = db.command
 const in_or_sp = ['income', 'spending']
