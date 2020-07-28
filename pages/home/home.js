@@ -1,7 +1,7 @@
 // pages/home/home.js
 const app = getApp()
 const db = wx.cloud.database({
-	env: 'ccc-hhh-zmio9'
+	env: 'xxx-xxx-xxx'
 });
 const _ = db.command
 
