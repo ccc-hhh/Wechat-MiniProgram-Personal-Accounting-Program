@@ -37,7 +37,7 @@ App({
       }
     });
     wx.cloud.init({
-      env: 'ccc-hhh-zmio9'
+      env: 'xxx-xxx-xxx'
     })
   },
   globalData: {
